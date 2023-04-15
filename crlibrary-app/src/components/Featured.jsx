@@ -9,7 +9,7 @@ const Featured = () => {
             <div className="container">
                 <div className="row">
                     <h2 className="section__title">
-                        Featured <span>Books</span>
+                        Featured <span className="purple">Books</span>
                         <div className="books">
                             {books
                                 .filter((book) => book.rating === 5)
