@@ -6,29 +6,29 @@ const Books = ({ books: initialBooks }) => {
     const [books, setBooks] = useState(initialBooks)
 
     function filterBooks(filter) {
-        console.log(filter)
+
         if (filter == 'LOW_TO_HIGH') {
             setBooks(
                 books
-                .slice()
-                //.slice basically creates a clone of the original
-                //we have to use .slice because React doesn't like to mutate the original
-                .sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)))
+                    .slice()
+                    //.slice basically creates a clone of the original
+                    //we have to use .slice because React doesn't like to mutate the original
+                    .sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)))
 
         }
         if (filter == 'HIGH_TO_LOW') {
             setBooks(
                 books
-                .slice()
-                .sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice)))
+                    .slice()
+                    .sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice)))
         }
 
-    if(filter === "RATING") {
-        setBooks(
-            books
-            .slice()
-            .sort((a, b) => (b.rating - a.rating )))
-    }
+        if (filter === "RATING") {
+            setBooks(
+                books
+                    .slice()
+                    .sort((a, b) => (b.rating - a.rating)))
+        }
     }
 
     return (
